@@ -4,6 +4,7 @@ class Piloto {
       this.anosPilotando = anosPilotando;
       this.treinosMes = treinosMes
     }
+    
     xp(){
       return (this.treinosMes + (this.anosPilotando * 30)) / 100
     }

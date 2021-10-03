@@ -33,14 +33,13 @@ let recordistas =(rec) =>{
   console.log(`\n-----------------------\n`)
 }
 
-let PesquisarRecordista = (recordista)=>{
+let pesquisaRecordista = (recordista)=>{
   for(let i = 0; i<recordesCorrida.length; i++){
-    if(recordista.nome==recordesCorrida[i].piloto)
-    console.log(`Corredor está dentre os recordistas.`)
-
-    else
-    console.log(`Não está entre os recordistas.`)
-
+    if(recordista.nome==recordesCorrida[i].piloto){
+      console.log(`O piloto ${recordista.nome} está na lista de recordistas.`)
+    }else{
+      console.log(`O piloto ${recordista.nome} não está entre os recordistas.`)
+    }
     console.log(`\n-----------------------\n`)
   }
 }
@@ -51,5 +50,5 @@ module.exports = {
   'api/v1/recorde': recorde,
   'api/v1/posicoes': posicoes,
   'api/v1/recordistas': recordistas,
-  'api/v1/PesquisarRecordista': PesquisarRecordista
+  'api/v1/pesquisaRecordista': pesquisaRecordista
 }

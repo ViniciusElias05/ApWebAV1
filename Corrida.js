@@ -17,7 +17,7 @@ class Corrida {
         
 
     }
-    enviandoRecordista(posicao){
+    enviaRecordista(posicao){
         const keys = ['piloto', 'feedback']
         const filterObject = (obj, keys) =>{
             return keys

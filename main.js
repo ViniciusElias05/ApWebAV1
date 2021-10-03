@@ -9,8 +9,10 @@ let arnaldo = new Piloto('Arnaldo', 4, 15)
 let pedro = new Piloto('Pedro', 2, 30)
 // console.log(pedro.xp())
 
+
 let carrango = new Veiculo('carro', 'corsa', 2000, 'cinza', 100)
 let ferrari = new Veiculo('carro', 'ferrari', 2021, 'vermelha', 400)
+
 let competidores = []
 let relatorio = (obj) => {
 
@@ -23,9 +25,9 @@ let relatorio = (obj) => {
 
       api['api/v1/posicoes']().then((resposta) => {
         PrimeiraCorrida.podio(competidores)
-        PrimeiraCorrida.enviandoRecordista(competidores)
+        PrimeiraCorrida.enviaRecordista(competidores)
         PrimeiraCorrida.diferencaCorredores(pedro)
-        api['api/v1/PesquisarRecordista'](arnaldo)
+        api['api/v1/pesquisaRecordista'](arnaldo)
       }).catch(erro => console.log(erro))
 
     }
@@ -35,17 +37,17 @@ let relatorio = (obj) => {
   competidores.push(obj)
 
 }
-let PrimeiraCorrida = new Corrida() 
+let PrimeiraCorrida = new Corrida()
 
 ferrari.acelerando0a100(arnaldo, relatorio)
 carrango.acelerando0a100(pedro, relatorio)
-
-
 
 let carros = []
 carros.push(ferrari)
 carros.push(carrango)
 PrimeiraCorrida.largada(carros)
+
+
 
 
 
